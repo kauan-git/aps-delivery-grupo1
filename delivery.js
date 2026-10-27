@@ -31,6 +31,17 @@ function calcularFrete(distanciaKm) {
   const excedente = distanciaKm - 3;
   return Number((5 + excedente * 1.50).toFixed(2));
 }
-function aplicarCupom(valor, cupom) { return valor; }
+function aplicarCupom(valor, cupom) {
+  if (cupom === null || cupom === undefined || cupom === '') {
+    return Number(valor.toFixed(2));
+  }
+  if (cupom === 'PRIMEIRA10') {
+    return Number((valor * 0.90).toFixed(2));
+  }
+  if (cupom === 'VIP20') {
+    return Number((valor * 0.80).toFixed(2));
+  }
+  throw new Error('Cupom inválido');
+}
 
 module.exports = { autenticar, forcaSenha, podeLogar, calcularFrete, aplicarCupom };
