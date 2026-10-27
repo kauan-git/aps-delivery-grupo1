@@ -21,7 +21,16 @@ function forcaSenha(senha) {
 function podeLogar(usuario) {
   return usuario.status === 'ativo' && usuario.falhas < 3;
 }
-function calcularFrete(distanciaKm) { return 0; }
+function calcularFrete(distanciaKm) {
+  if (distanciaKm <= 0) {
+    throw new Error('Distância inválida');
+  }
+  if (distanciaKm <= 3) {
+    return 5;
+  }
+  const excedente = distanciaKm - 3;
+  return Number((5 + excedente * 1.50).toFixed(2));
+}
 function aplicarCupom(valor, cupom) { return valor; }
 
 module.exports = { autenticar, forcaSenha, podeLogar, calcularFrete, aplicarCupom };
