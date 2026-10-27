@@ -18,7 +18,9 @@ function forcaSenha(senha) {
   }
   return 'forte';
 }
-function podeLogar(usuario) { return true; }
+function podeLogar(usuario) {
+  return usuario.status === 'ativo' && usuario.falhas < 3;
+}
 function calcularFrete(distanciaKm) { return 0; }
 function aplicarCupom(valor, cupom) { return valor; }
 
