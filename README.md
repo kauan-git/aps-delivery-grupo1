@@ -9,7 +9,7 @@ Repositório desenvolvido para a Atividade Prática Supervisionada (APS) de test
 Evidências da execução dos 20 casos de teste (CT-01 a CT-20) e da cobertura de código atingida.
 
 ### Testes Passando (20/20)
-![Print dos Testes](./print%20teste.png)
+![Print Testes](./print%20teste.png)
 
 ### Cobertura de Código (100%)
-![Print da Cobertura](./print%20cobertura.png)
+![Print Cobertura](./print%20cobertura.png)
